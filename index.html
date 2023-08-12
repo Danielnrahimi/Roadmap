@@ -3,30 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <h1>Danial is my king</h1>
-    <title>MAC Calculator for TARA</title>
+    <title>MAC Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; }
-        label, select, input { margin-bottom: 10px; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #e0f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #a2d9ce;
+            padding: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label, select, input, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #76d7c4;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #48c9b0;
+        }
+
+        #result {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-    <h2>Mid-Arm Circumference (MAC) Calculator</h2>
-    <label for="gender">Gender:</label>
-    <select id="gender">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-    </select><br><br>
+    <div class="container">
+        <h2>Mid-Arm Circumference (MAC) Calculator</h2>
+        <label for="gender">Gender:</label>
+        <select id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
 
-    <label for="weight">Weight (kg):</label>
-    <input type="number" id="weight"><br><br>
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight">
 
-    <label for="height">Height (cm):</label>
-    <input type="number" id="height"><br><br>
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height">
 
-    <button onclick="calculateMAC()">Calculate MAC</button>
-    <br><br>
-    <div id="result"></div>
+        <button onclick="calculateMAC()">Calculate MAC</button>
+
+        <div id="result"></div>
+    </div>
 
     <script>
         function calculateMAC() {
